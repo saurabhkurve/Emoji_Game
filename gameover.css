@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif; /* Updated font family */
+  background-color: #ab9adf; /* Updated background color */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.gameover-container {
+  background-color: #c1b0e2; /* Card background color */
+  color: white; /* Text color */
+  padding: 40px 20px; /* Increased padding for better spacing */
+  border-radius: 15px; /* More rounded borders */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow */
+  width: 350px; /* Fixed width for the card */
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-size: 2.5em; /* Larger font size for the heading */
+  color: #f6f5f1; /* Yellow color for the heading */
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.scoreboard div {
+  font-size: 1.5em; /* Larger font size for the scoreboard */
+  color: white; /* White color for the text */
+  font-weight: bold; /* Bold text */
+}
+
+.scoreboard span {
+  color: #2196f3; /* Blue color for the score */
+  font-weight: bold;
+  
+}
+
+#loseMessage {
+  font-size: 2.5em; /* Increased font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 20px;
+  color: #ff5722; /* Orange color for the lose message */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #333; /* Dark text color */
+  background-color: #ffeb3b; /* Yellow background color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #fdd835; /* Darker yellow on hover */
+  color: #333; /* Dark text color on hover */
+}

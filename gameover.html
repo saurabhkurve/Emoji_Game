@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Over</title>
+    <link rel="stylesheet" href="gameover.css" />
+  </head>
+  <body>
+    <div class="gameover-container">
+      <div class="content">
+        <h1>Game Over</h1>
+        <div class="scoreboard" id="scoreboard">
+          <div>Your Score: <span id="finalScore">0</span></div>
+          <div>Top Score: <span id="finalTopScore">0</span></div>
+        </div>
+        <div id="loseMessage" style="display: none">You Lose</div>
+        <div id="congratsMessage" style="display: none">
+          Congratulations! You got a perfect score!
+        </div>
+        <button onclick="restartGame()">Play Again</button>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const finalScore = localStorage.getItem("score");
+        const finalTopScore = localStorage.getItem("topScore");
+        if (finalScore === "12") {
+          document.getElementById("congratsMessage").style.display = "block";
+        } else {
+          document.getElementById("loseMessage").style.display = "block";
+        }
+        document.getElementById("finalScore").textContent = `${finalScore}/12`;
+        document.getElementById(
+          "finalTopScore"
+        ).textContent = `${finalTopScore}`;
+      });
+
+      function restartGame() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
