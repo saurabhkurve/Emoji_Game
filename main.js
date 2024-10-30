@@ -46,22 +46,29 @@ function renderEmojis() {
 function handleEmojiClick(event) {
   const selectedEmoji = event.target.textContent;
   if (clickedEmojis.has(selectedEmoji)) {
-    if (score > topScore) {
-      topScore = score;
-      localStorage.setItem("topScore", topScore);
-    }
-    localStorage.setItem("score", score);
-    score = 0;
-    clickedEmojis.clear();
-    window.location.href = "gameover.html";
+    gameOver();
   } else {
     clickedEmojis.add(selectedEmoji);
     score++;
+    scoreElement.textContent = score;
+    if (score === 12) {
+      gameOver();
+    } else {
+      renderEmojis();
+    }
   }
-  scoreElement.textContent = score;
-  renderEmojis();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   renderEmojis();
 });
+
+function gameOver() {
+  if (score > topScore) {
+    topScore = score;
+    localStorage.setItem("topScore", topScore);
+  }
+  localStorage.setItem("score", score);
+  window.location.href = "gameover.html";
+}
+

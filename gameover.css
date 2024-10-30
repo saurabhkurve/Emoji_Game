@@ -45,6 +45,12 @@ h1 {
   font-weight: bold;
   
 }
+#congratsMessage {
+  font-size: 2em; /* Same size as lose message */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 20px;
+  color: #4caf50; /* Green color for the congratulations message */
+}
 
 #loseMessage {
   font-size: 2.5em; /* Increased font size */
